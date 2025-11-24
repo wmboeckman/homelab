@@ -2,3 +2,17 @@
 ---
 ### Project Overview
 My goal for this project is to build a Cluster of *Proxmox Hypervisors* that will allow me to run future projects on top of. This project will allow me to get my hands dirty with *virtualization* and apply some of my *Computer Networking* knowledge to set up a secure network topology that will allow me to "safely" host a variety of services to the public internet. For now, however, my plan is to only expose these services via a *Cloudflare Tunnel*.
+
+For hardware, I limited myself to only spend $100, and I was able to find a good deal on 3 Lenovo ThinkCenter M73 machines, each with an Intel Core i3-4130T @ 2.9GHz with 8GB of RAM and a 256GB SATA SSD. While the i3 processors are limiting, I plan on upgrading them (perhaps with i5-4590Ts) when the need arises. 
+
+### Limitations
+At my current residence, I do not have control over the network settings, including assigning static IPs or port-forwarding, and am limited to a wireless connection. My temporary solution is to use a direct connection via a statically-assigned private subnet operating over a switch, the same one that will be used for each Proxmox node to talk to each other.
+
+This of course leaves the WAN to deal with. There are really only two other ways for me to get each node online, either by creating a network bridge on my desktop and using a Router with NAT, or enable the wireless NICs on each of my nodes. I initially attempted the first option, and while it worked temporarily I found that I had issues with getting a reliable DNS connection.
+
+![topology-1](img/topology-1.png)
+
+### Enabling WiFi on Proxmox VE 9.1.1
+I followed a guide made by [Ikhlash Rakhmanta](https://github.com/ikhlashr-workspace/Proxmox-HomeLab/blob/main/1%20Networking%20-%20Additional%20Wifi%20Configuration.md) to enable the wireless network on each of my servers. While this worked well for the Hypervisor host, the system was not yet configured to provide routing between this interface and any VMs or Containers.
+
+`11/23/25`: I am currently implimenting a private internal subnet that will get connected to the wireless interface via NAT by following parts of [this guide](https://blog.popescul.com/posts/2025/07/20/proxmox-bridge-dhcp-setup/). Currently running into issues with getting the internal DHCP server up and running, could be something to do with it starting up before the other interfaces have time to catch up, might try to add some artificial wait time for the service on startup?
