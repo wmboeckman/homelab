@@ -14,5 +14,3 @@ This of course leaves the WAN to deal with. There are really only two other ways
 
 ### Enabling WiFi on Proxmox VE 9.1.1
 I followed a guide made by [Ikhlash Rakhmanta](https://github.com/ikhlashr-workspace/Proxmox-HomeLab/blob/main/1%20Networking%20-%20Additional%20Wifi%20Configuration.md) to enable the wireless network on each of my servers. While this worked well for the Hypervisor host, the system was not yet configured to provide routing between this interface and any VMs or Containers.
-
-`11/23/25`: I am currently implimenting a private internal subnet that will get connected to the wireless interface via NAT by following parts of [this guide](https://blog.popescul.com/posts/2025/07/20/proxmox-bridge-dhcp-setup/). Currently running into issues with getting the internal DHCP server up and running, could be something to do with it starting up before the other interfaces have time to catch up, might try to add some artificial wait time for the service on startup?
