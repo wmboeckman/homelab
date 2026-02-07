@@ -1,1 +1,3 @@
-codebook.toml
+# MkDocs
+.venv
+site
