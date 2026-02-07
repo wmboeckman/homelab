@@ -1,5 +1,5 @@
-## 3-Node Proxmox Cluster
----
+# 3-Node Proxmox Cluster
+wq## ! UNDER CONSTRUCTION !
 ### Project Overview
 My goal for this project is to build a Cluster of *Proxmox Hypervisors* that will allow me to run future projects on top of. This project will allow me to get my hands dirty with *virtualization* and apply some of my *Computer Networking* knowledge to set up a secure network topology that will allow me to "safely" host a variety of services to the public internet. For now, however, my plan is to only expose these services via a *Cloudflare Tunnel*.
 
@@ -12,5 +12,3 @@ This of course leaves the WAN to deal with. There are really only two other ways
 
 ![topology-1](img/topology-1.png)
 
-### Enabling WiFi on Proxmox VE 9.1.1
-I followed a guide made by [Ikhlash Rakhmanta](https://github.com/ikhlashr-workspace/Proxmox-HomeLab/blob/main/1%20Networking%20-%20Additional%20Wifi%20Configuration.md) to enable the wireless network on each of my servers. While this worked well for the Hypervisor host, the system was not yet configured to provide routing between this interface and any VMs or Containers.

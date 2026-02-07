@@ -1,0 +1,6 @@
+# Solutions
+
+Here is a compiled list of solutions to the many problems I had to solve for this project. Maybe this can be of use for other people:
+
+### Enabling WiFi on Proxmox VE 9.1.1
+I followed a guide made by [Ikhlash Rakhmanta](https://github.com/ikhlashr-workspace/Proxmox-HomeLab/blob/main/1%20Networking%20-%20Additional%20Wifi%20Configuration.md) to enable the wireless network on each of my servers. While this worked well for the Hypervisor host, the system was not yet configured to provide routing between this interface and any VMs or Containers.
