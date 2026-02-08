@@ -1,4 +1,31 @@
-site_name: My Docs
-site_url: https://mydomain.org/mysite
+site_name: Will's Homelab
+site_description: A space to document my homelab projects
+site_author: Will Boeckman
+site_url: https://wmboeckman.github.io/homelab/
+repo_url: https://github.com/wmboeckman/homelab
+
 theme:
   name: material
+  features:
+    - navigation.indexes
+    # - navigation.tabs
+    # - navigation.top
+    - search.suggest
+    - search.highlight
+  palette:
+    primary: black
+    accent: deep orange
+  highlightjs: true
+  hljs_languages:
+    - Ini
+    - TOML
+
+plugins:
+  - search
+  - blog:
+      blog_dir: journal
+      post_date_format: yyyy-MM-dd
+      post_url_format: "{date}/{slug}"
+      categories_name: Categories
+      categories_allowed:
+        - PVE Cluster
