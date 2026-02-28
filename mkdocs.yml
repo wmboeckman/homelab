@@ -29,3 +29,4 @@ plugins:
       categories_name: Categories
       categories_allowed:
         - PVE Cluster
+        - NAS
