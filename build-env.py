@@ -6,8 +6,8 @@ VENV_DIR = ".venv/"
 
 def main():
     # Determine the correct pip path based on OS
-    pip_exe = os.path.join(VENV_DIR, "Scripts", "pip") if os.name == "nt" else os.path.join(venv_dir, "bin", "pip")
-    python_exe = os.path.join(VENV_DIR, "Scripts", "python") if os.name == "nt" else os.path.join(venv_dir, "bin", "python")
+    pip_exe = os.path.join(VENV_DIR, "Scripts", "pip") if os.name == "nt" else os.path.join(VENV_DIR, "bin", "pip")
+    python_exe = os.path.join(VENV_DIR, "Scripts", "python") if os.name == "nt" else os.path.join(VENV_DIR, "bin", "python")
 
     create_venv()
 
