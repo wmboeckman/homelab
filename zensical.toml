@@ -1,0 +1,41 @@
+[project]
+site_name = "Will's Homelab"
+site_description = "A space to document my homelab projects"
+site_author = "Will Boeckman"
+repo_url = "https://github.com/wmboeckman/homelab"
+site_url = "https://wmboeckman.github.io/homelab/"
+docs_dir = "docs"
+site_dir = "site"
+
+nav = [
+  { "Home" = "index.md" },
+  { "Blog" = ["journal/index.md"] },
+]
+
+[project.plugins.blog]
+blog_dir = "journal"
+authors = false
+post_date_format = "yyyy-MM-dd"
+post_url_format = "{date}/{slug}"
+categories_name = "Categories"
+categories_allowed = [
+    "PVE Cluster",
+    "NAS"
+]
+
+# Palette toggle for light mode
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+# Palette toggle for dark mode
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+[project.theme]
+features = [
+  "navigation.footer",
+]
